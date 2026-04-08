@@ -46,6 +46,10 @@ const pulse = keyframes`
 `;
 
 const CIRCLE_SIZE = "48px";
+const CIRCLE_BORDER = "2px";
+const CIRCLE_INSET = "3px";
+const PULSE_SIZE = "6px";
+const PULSE_OFFSET = "-2px";
 
 const CircleBase = styled.div`
   width: ${CIRCLE_SIZE};
@@ -67,7 +71,7 @@ const overlayCenter = css`
   &::before {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: ${CIRCLE_INSET};
     border-radius: 50%;
     background: ${theme.colors.surface};
   }
@@ -79,7 +83,7 @@ const overlayCenter = css`
 `;
 
 const LiveCircle = styled(CircleBase)`
-  border: 2px solid ${theme.colors.border};
+  border: ${CIRCLE_BORDER} solid ${theme.colors.border};
   background: conic-gradient(
     ${theme.colors.success} 0deg var(--progress, 0deg),
     transparent var(--progress, 0deg) 360deg
@@ -89,7 +93,7 @@ const LiveCircle = styled(CircleBase)`
 `;
 
 const HTCircle = styled(CircleBase)`
-  border: 2px solid ${theme.colors.warning};
+  border: ${CIRCLE_BORDER} solid ${theme.colors.warning};
   background: conic-gradient(
     ${theme.colors.warning} 0deg 180deg,
     transparent 180deg 360deg
@@ -98,24 +102,24 @@ const HTCircle = styled(CircleBase)`
 `;
 
 const FTCircle = styled(CircleBase)`
-  border: 2px solid ${theme.colors.success};
+  border: ${CIRCLE_BORDER} solid ${theme.colors.success};
   color: ${theme.colors.success};
 `;
 
 const EmptyCircle = styled(CircleBase)`
-  border: 2px solid ${theme.colors.border};
+  border: ${CIRCLE_BORDER} solid ${theme.colors.border};
   color: ${theme.colors.textTertiary};
 `;
 
 const PulseDot = styled.div`
-  width: 6px;
-  height: 6px;
+  width: ${PULSE_SIZE};
+  height: ${PULSE_SIZE};
   border-radius: 50%;
   background: ${theme.colors.live};
   animation: ${pulse} 1.5s ease-in-out infinite;
   position: absolute;
-  top: -2px;
-  right: -2px;
+  top: ${PULSE_OFFSET};
+  right: ${PULSE_OFFSET};
   z-index: 2;
 `;
 
