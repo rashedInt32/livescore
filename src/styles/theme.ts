@@ -14,6 +14,7 @@ export const theme = {
     successBg:  'rgba(34, 197, 94, 0.12)',
     warning:    '#eab308',
     warningBg:  'rgba(234, 179, 8, 0.12)',
+    textMuted:  'rgba(255, 255, 255, 0.8)',
     muted:      '#707070',
     mutedBg:    'rgba(112, 112, 112, 0.12)',
 
@@ -77,6 +78,7 @@ export const theme = {
   shadows: {
     card:      '0 2px 8px rgba(0,0,0,0.3)',
     cardHover: '0 8px 24px rgba(0,0,0,0.5)',
+    sticky:    '0 4px 12px rgba(0, 0, 0, 0.4)',
   },
 } as const
 

@@ -43,7 +43,7 @@ const CardHeader = styled.div`
 const Country = styled.span`
   font-size: ${theme.fontSizes.xs};
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: ${theme.colors.textMuted};
   letter-spacing: 1.5px;
   text-transform: uppercase;
   max-width: 100%;
