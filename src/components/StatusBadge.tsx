@@ -21,6 +21,7 @@ const LabelText = styled.span<{ $status: DisplayStatus }>`
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  margin-top: ${theme.spacing.xs};
   color: ${({ $status }: { $status: DisplayStatus }) => LABEL_COLORS[$status]};
 `;
 
