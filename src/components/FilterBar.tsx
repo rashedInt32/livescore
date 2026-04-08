@@ -41,7 +41,7 @@ const Tab = styled.button<{ $active: boolean }>`
   display: inline-flex;
   align-items: center;
   gap: ${theme.spacing.sm};
-  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  padding: ${theme.spacing.xs} ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.full};
   font-family: ${theme.fonts.primary};
   font-size: ${theme.fontSizes.sm};
