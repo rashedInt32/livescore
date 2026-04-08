@@ -21,17 +21,6 @@ const FILTER_LABELS: Record<FilterType, string> = {
 
 const MIN_TAP_TARGET = "44px";
 
-const Nav = styled.nav`
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: ${theme.colors.background};
-  border-bottom: 1px solid ${theme.colors.border};
-  padding: ${theme.spacing.sm} 0;
-  margin-bottom: ${theme.spacing.lg};
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-`;
-
 const TabList = styled.div`
   display: flex;
   gap: ${theme.spacing.sm};
@@ -44,7 +33,6 @@ const TabList = styled.div`
 
   @media (min-width: ${theme.breakpoints.md}) {
     gap: ${theme.spacing.md};
-    justify-content: center;
     overflow-x: visible;
   }
 `;
@@ -105,24 +93,22 @@ const Badge = styled.span<{ $active: boolean }>`
 
 export function FilterBar({ activeFilter, counts, onFilterChange }: FilterBarProps) {
   return (
-    <Nav aria-label="Match filters">
-      <TabList role="tablist">
-        {FILTERS.map((filter) => {
-          const isActive = activeFilter === filter;
-          return (
-            <Tab
-              key={filter}
-              role="tab"
-              aria-selected={isActive}
-              $active={isActive}
-              onClick={() => onFilterChange(filter)}
-            >
-              {FILTER_LABELS[filter]}
-              <Badge $active={isActive}>{counts[filter]}</Badge>
-            </Tab>
-          );
-        })}
-      </TabList>
-    </Nav>
+    <TabList role="tablist" aria-label="Match filters">
+      {FILTERS.map((filter) => {
+        const isActive = activeFilter === filter;
+        return (
+          <Tab
+            key={filter}
+            role="tab"
+            aria-selected={isActive}
+            $active={isActive}
+            onClick={() => onFilterChange(filter)}
+          >
+            {FILTER_LABELS[filter]}
+            <Badge $active={isActive}>{counts[filter]}</Badge>
+          </Tab>
+        );
+      })}
+    </TabList>
   );
 }

@@ -13,7 +13,7 @@ export function getMatchDisplayStatus(match: Match): MatchDisplayStatus {
       if (match.liveStatus === "HT") {
         return { status: "HT", label: "HT", isLive: true };
       }
-      return { status: "LIVE", label: match.liveStatus, isLive: true };
+      return { status: "LIVE", label: "LIVE", minute: match.liveStatus, isLive: true };
 
     case "finished":
       return { status: "FT", label: "ENDED", isLive: false };

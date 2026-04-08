@@ -8,7 +8,7 @@ import { getProgressDeg } from "@/lib/utils/scoreUtils";
 // --- StatusLabel: coloured text at the top of the card ---
 
 const LABEL_COLORS: Record<DisplayStatus, string> = {
-  LIVE: theme.colors.live,
+  LIVE: theme.colors.warning,
   HT: theme.colors.warning,
   FT: theme.colors.success,
   CANCELLED: theme.colors.live,
@@ -133,19 +133,19 @@ interface StatusCircleProps {
 }
 
 export function StatusCircle({ displayStatus }: StatusCircleProps) {
-  const { status, label } = displayStatus;
+  const { status, minute } = displayStatus;
 
   switch (status) {
     case "LIVE": {
-      const deg = getProgressDeg(label);
+      const deg = getProgressDeg(minute ?? "0");
       return (
         <LiveCircleWrapper>
           <PulseDot aria-hidden="true" />
           <LiveCircle
             style={{ "--progress": `${deg}deg` } as React.CSSProperties}
-            aria-label={`Match minute ${label}`}
+            aria-label={`Match minute ${minute}`}
           >
-            <span>{label}'</span>
+            <span>{minute}'</span>
           </LiveCircle>
         </LiveCircleWrapper>
       );

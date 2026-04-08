@@ -52,5 +52,6 @@ export type DisplayStatus = "LIVE" | "HT" | "FT" | "CANCELLED" | "PREMATCH";
 export interface MatchDisplayStatus {
   readonly status: DisplayStatus;
   readonly label: string;
+  readonly minute?: string;
   readonly isLive: boolean;
 }
