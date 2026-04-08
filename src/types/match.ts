@@ -1,3 +1,5 @@
+// --- Domain types (data from provider) ---
+
 export interface Team {
   readonly id: number;
   readonly name: string;
@@ -14,10 +16,23 @@ export interface Score {
 
 export type ScoreValue = Score | Record<string, never>;
 
+export type MatchStatusType =
+  | "finished"
+  | "inprogress"
+  | "notstarted"
+  | "canceled";
+
 export interface MatchStatus {
   readonly code: number;
-  readonly type: "finished" | "inprogress" | "notstarted" | "canceled";
+  readonly type: MatchStatusType;
 }
+
+export type LiveStatus =
+  | "FT"
+  | "HT"
+  | "-"
+  | "Canceled"
+  | (string & {});
 
 export interface Match {
   readonly id: string;
@@ -35,8 +50,10 @@ export interface Match {
   readonly awayTeam: Team;
   readonly homeScore: ScoreValue;
   readonly awayScore: ScoreValue;
-  readonly liveStatus: string;
+  readonly liveStatus: LiveStatus;
 }
+
+// --- UI types (view layer) ---
 
 export type FilterType = "ALL" | "Result" | "Live" | "Upcoming";
 
