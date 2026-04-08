@@ -73,7 +73,7 @@ const overlayCenter = css`
     position: absolute;
     inset: ${CIRCLE_INSET};
     border-radius: 50%;
-    background: ${theme.colors.surface};
+    background: ${theme.colors.card};
   }
 
   span {

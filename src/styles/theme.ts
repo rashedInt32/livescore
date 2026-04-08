@@ -1,12 +1,12 @@
 export const theme = {
   colors: {
-    background:   '#0f172a',
-    surface:      '#1e293b',
-    surfaceHover: '#334155',
+    background:   '#1a1a1a',
+    surface:      '#2d2d2d',
+    surfaceHover: '#4a4a4a',
 
-    textPrimary:   '#f8fafc',
-    textSecondary: '#94a3b8',
-    textTertiary:  '#64748b',
+    textPrimary:   '#f5f5f5',
+    textSecondary: '#a0a0a0',
+    textTertiary:  '#707070',
 
     live:       '#ef4444',
     liveBg:     'rgba(239, 68, 68, 0.12)',
@@ -14,16 +14,17 @@ export const theme = {
     successBg:  'rgba(34, 197, 94, 0.12)',
     warning:    '#eab308',
     warningBg:  'rgba(234, 179, 8, 0.12)',
-    muted:      '#64748b',
-    mutedBg:    'rgba(100, 116, 139, 0.12)',
+    muted:      '#707070',
+    mutedBg:    'rgba(112, 112, 112, 0.12)',
 
     winner:  '#22c55e',
-    border:  '#334155',
+    card:    '#3d3d3d',
+    border:  '#4a4a4a',
 
     filterActive:          '#3b82f6',
     filterActiveBg:        'rgba(59, 130, 246, 0.12)',
     filterBadgeActive:     '#3b82f6',
-    filterBadgeInactive:   '#334155',
+    filterBadgeInactive:   '#4a4a4a',
   },
 
   fonts: {
@@ -55,6 +56,10 @@ export const theme = {
     sm: '640px',
     md: '768px',
     lg: '1024px',
+  },
+
+  layout: {
+    maxWidth: '1440px',
   },
 
   borderRadius: {

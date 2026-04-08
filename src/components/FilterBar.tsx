@@ -29,6 +29,7 @@ const Nav = styled.nav`
   border-bottom: 1px solid ${theme.colors.border};
   padding: ${theme.spacing.sm} 0;
   margin-bottom: ${theme.spacing.lg};
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 `;
 
 const TabList = styled.div`

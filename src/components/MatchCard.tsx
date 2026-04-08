@@ -16,9 +16,10 @@ const Card = styled.article`
   flex-direction: column;
   align-items: center;
   padding: ${theme.spacing.lg} ${theme.spacing.md};
-  background: ${theme.colors.surface};
+  background: ${theme.colors.card};
   border-radius: ${theme.borderRadius.lg};
   font-family: ${theme.fonts.primary};
+  overflow: hidden;
   transition:
     background ${theme.transitions.fast},
     box-shadow ${theme.transitions.fast},
@@ -45,12 +46,20 @@ const Country = styled.span`
   color: ${theme.colors.textTertiary};
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Competition = styled.span`
   font-size: ${theme.fontSizes.base};
   font-weight: 500;
   color: ${theme.colors.textPrimary};
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @media (min-width: ${theme.breakpoints.md}) {
     font-size: ${theme.fontSizes.lg};
