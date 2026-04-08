@@ -138,15 +138,16 @@ export function StatusCircle({ displayStatus }: StatusCircleProps) {
 
   switch (status) {
     case "LIVE": {
-      const deg = getProgressDeg(minute ?? "0");
+      const currentMinute = minute ?? "0";
+      const deg = getProgressDeg(currentMinute);
       return (
         <LiveCircleWrapper>
           <PulseDot aria-hidden="true" />
           <LiveCircle
             style={{ "--progress": `${deg}deg` } as React.CSSProperties}
-            aria-label={`Match minute ${minute}`}
+            aria-label={`Match minute ${currentMinute}`}
           >
-            <span>{minute}'</span>
+            <span>{currentMinute}'</span>
           </LiveCircle>
         </LiveCircleWrapper>
       );

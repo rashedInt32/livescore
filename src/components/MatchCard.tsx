@@ -15,7 +15,7 @@ const Card = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: calc(${theme.spacing.lg} + 10px) ${theme.spacing.md};
+  padding: ${theme.spacing.xl} ${theme.spacing.md};
   background: ${theme.colors.card};
   border-radius: ${theme.borderRadius.sm};
   font-family: ${theme.fonts.primary};
